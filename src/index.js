@@ -2,13 +2,14 @@
 import { save } from "./functionailty/save";
 import { sideButtons } from "./functionailty/sideButtons";
 import "./style.css";
+import { contentLoader } from "./contentLoader";
 import { sideButtonsLoader } from "./functionailty/sideButtonLoader";
 //
 
-sideButtonsLoader();
 sideButtons();
+sideButtonsLoader();
 save();
-fetch("https://api.jikan.moe/v4/anime?q=dragon ball&limit=10&page=1&type=tv")
+fetch("https://api.jikan.moe/v4/anime?q=one peice ball&limit=10&page=1")
   .then((res) => res.json())
   .then((json) => json.data)
   .then((data) => {
@@ -22,9 +23,12 @@ fetch("https://api.jikan.moe/v4/anime?q=dragon ball&limit=10&page=1&type=tv")
         description: data[i].synopsis,
         score: data[i].score,
         demographics: data[i].demographics[0].name,
+        image: data[i].images.jpg.image_url,
       };
     }
-    console.log(object);
+
+    contentLoader(object);
+    console.log(object[keys[0]]);
     console.log(data);
   });
 const keys = [

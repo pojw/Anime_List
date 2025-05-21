@@ -11,8 +11,24 @@ body {
 #sideBar {
   display: grid;
   justify-content: center;
+  gap: 15px;
 }
 
 .sideButton {
   width: 100px;
+}
+
+#rightSdie {
+  display: grid;
+  grid-template-rows: 10vh 90vh;
+}
+
+#content {
+  display: grid;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+}
+
+.card {
+  display: grid;
 }

@@ -1,9 +1,9 @@
 import { save } from "./save";
 import { load } from "./save";
 
-let sideButtons = load("sideButtons");
-
 export function sideButtonsLoader() {
+  let sideButtons = load("sideButtons");
+
   let sideBar = document.getElementById("sideBar");
   for (let i = 0; i < sideButtons.length; i++) {
     let btn = document.createElement("button");
