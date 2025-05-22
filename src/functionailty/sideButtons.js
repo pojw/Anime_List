@@ -11,7 +11,8 @@ export function sideButtons() {
       ["Math Topics"],
     ];
     localStorage.setItem("currentPage", JSON.stringify(1));
-
+    localStorage.setItem("genre", JSON.stringify("tv"));
     localStorage.setItem("sideButtons", JSON.stringify(sideButtons));
+    localStorage.setItem("sorting", JSON.stringify("asc"));
   }
 }

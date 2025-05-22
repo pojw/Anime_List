@@ -1,15 +1,21 @@
 import { save } from "./functionailty/save";
 import { load } from "./functionailty/save";
 
-export function sideButtonsContent(info) {
+export function sideButtonsContent() {
+  let info = load("sideButtons")[0];
   console.log(info);
-  console.log(info[1].title);
   let currentPage = load("currentPage");
   let container = document.getElementById("content");
   container.textContent = "";
   for (let i = 1; i < 1 + currentPage * 9; i++) {
     //load information
-
+    if (!info[i]) {
+      continue;
+    }
+    if (info.length == 1) {
+      console.log("none");
+      break;
+    }
     let card = document.createElement("div");
 
     let title = document.createElement("div");
