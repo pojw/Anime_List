@@ -28,12 +28,31 @@ body {
 
 #content {
   display: grid;
-  grid-template-columns: repeat(4, 25%);
-  grid-template-rows: repeat(4, 25%);
+  grid-template-columns: repeat(3, 33%);
+  grid-template-rows: repeat(3, 33%);
   border: 3px rgb(0, 102, 128) solid;
 }
 
 .card {
   display: grid;
   border: 3px rgb(0, 45, 128) solid;
+}
+
+.photos {
+  display: block;
+  /* max-width: 250px;
+  min-width: 100px;
+  max-height: 250px;
+  min-height: 100px; */
+  height: 250px;
+  width: 200px;
+}
+
+.show {
+  display: inline-block;
+  position: relative;
+}
+
+.hidden {
+  display: none;
 }

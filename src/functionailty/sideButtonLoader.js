@@ -1,6 +1,8 @@
 import { save } from "./save";
 import { load } from "./save";
 
+import { sideButtonsContent } from "../sideButtonContent";
+
 export function sideButtonsLoader() {
   let sideButtons = load("sideButtons");
 
@@ -8,7 +10,7 @@ export function sideButtonsLoader() {
   for (let i = 0; i < sideButtons.length; i++) {
     let btn = document.createElement("button");
     btn.addEventListener("click", function () {
-      console.log(sideButtons[i]);
+      sideButtonsContent(sideButtons[i]);
     });
     btn.textContent = sideButtons[i][0];
     sideBar.appendChild(btn);

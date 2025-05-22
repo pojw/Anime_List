@@ -1,59 +1,47 @@
 import { save } from "./functionailty/save";
 import { load } from "./functionailty/save";
-import { add } from "./addButton";
-export function contentLoader(object) {
-  //retrieve information needed
-  const keys = [
-    "first",
-    "second",
-    "third",
-    "fourth",
-    "fifth",
-    "sixth",
-    "seventh",
-    "eighth",
-    "ninth",
-    "tenth",
-  ];
-  //   let content = load("sideButtons")[index];
+
+export function sideButtonsContent(info) {
+  console.log(info);
+  console.log(info[1].title);
+  let currentPage = load("currentPage");
   let container = document.getElementById("content");
   container.textContent = "";
-  console.log(Object.keys(object).length);
+  for (let i = 1; i < 1 + currentPage * 9; i++) {
+    //load information
 
-  //load information
-  for (let i = 0; i < Object.keys(object).length; i++) {
     let card = document.createElement("div");
 
     let title = document.createElement("div");
-    title.textContent = object[keys[i]].title;
+    title.textContent = info[i].title;
 
     let duration = document.createElement("div");
-    duration.textContent = object[keys[i]].duration;
+    duration.textContent = info[i].duration;
 
     let episodes = document.createElement("div");
-    episodes.textContent = object[keys[i]].episodes;
+    episodes.textContent = info[i].episodes;
 
     let type = document.createElement("div");
-    type.textContent = object[keys[i]].type;
+    type.textContent = info[i].type;
 
     let description = document.createElement("div");
-    description.textContent = object[keys[i]].description;
+    description.textContent = info[i].description;
 
     let score = document.createElement("div");
-    score.textContent = object[keys[i]].score;
+    score.textContent = info[i].score;
 
     let demographics = document.createElement("div");
-    demographics.textContent = object[keys[i]].demographics;
+    demographics.textContent = info[i].demographics;
 
     let image = document.createElement("img");
-    image.src = object[keys[i]].image;
+    image.src = info[i].image;
     image.classList.add("photos");
 
     let addButton = document.createElement("button");
-    addButton.textContent = "Add";
+    addButton.textContent = "remove";
     addButton.classList.add("addButton");
     addButton.addEventListener("click", () => {
-      add(object[keys[i]]);
+      add(info[i]);
     });
 
     card.append(title, addButton, image, duration, episodes);
