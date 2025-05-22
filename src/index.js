@@ -5,11 +5,14 @@ import "./style.css";
 import { contentLoader } from "./contentLoader";
 import { sideButtonsLoader } from "./functionailty/sideButtonLoader";
 //
+let page = 1; //curpage
+let title = "One piece"; // user input
+let limit = 10; //result per page
 
 sideButtons();
 sideButtonsLoader();
 save();
-fetch("https://api.jikan.moe/v4/anime?q=one peice ball&limit=10&page=1")
+fetch(`https://api.jikan.moe/v4/anime?q=${title}&limit=${limit}&page=${page}`)
   .then((res) => res.json())
   .then((json) => json.data)
   .then((data) => {
@@ -43,9 +46,6 @@ const keys = [
   "ninth",
   "tenth",
 ]; //vvairables/ options
-let title = ""; // user input
-let page = 1; //curpage
-let limit = 10; //result per page
 
 let order = "score"; //  order by socre or poultauirioy
 let sort = "desc"; //dess or asc
