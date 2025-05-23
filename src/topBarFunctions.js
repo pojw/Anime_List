@@ -6,11 +6,11 @@ export function topBarFunctions() {
 
   let submitButton = document.getElementById("submit");
   submitButton.addEventListener("click", () => {
-    search(searchBar.value, 1, "tv");
+    search(searchBar.value);
   });
   searchBar.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      search(searchBar.value, 1, "tv");
+      search(searchBar.value);
     }
   });
   //Add function to series buttons

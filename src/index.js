@@ -12,7 +12,7 @@ sideButtonsLoader();
 save();
 topBarFunctions();
 
-search("one peiece", 1, "");
+search("one peiece");
 //vvairables/ options
 
 let order = "score"; //  order by socre or poultauirioy

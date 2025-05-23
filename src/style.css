@@ -15,9 +15,11 @@ body {
   gap: 15px;
   border: 3px rgb(128, 9, 0) solid;
 }
-
-.sideButton {
+#sidebar > .child-class {
   width: 100px;
+}
+.sideButton {
+  width: 300px;
 }
 
 #rightSdie {

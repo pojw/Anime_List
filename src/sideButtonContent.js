@@ -1,6 +1,6 @@
 import { save } from "./functionailty/save";
 import { load } from "./functionailty/save";
-
+import { remove } from "./remove";
 export function sideButtonsContent() {
   let info = load("sideButtons")[0];
   console.log(info);
@@ -47,7 +47,7 @@ export function sideButtonsContent() {
     addButton.textContent = "remove";
     addButton.classList.add("addButton");
     addButton.addEventListener("click", () => {
-      add(info[i]);
+      remove(i);
     });
 
     card.append(title, addButton, image, duration, episodes);

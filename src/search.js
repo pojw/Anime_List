@@ -1,8 +1,11 @@
 import { contentLoader } from "./contentLoader";
-
-export function search(title, page, genre) {
+import { load } from "./functionailty/save";
+export function search(title) {
+  let page = load("currentPage");
+  let genre = load("genre");
+  let sorting = load("sorting");
   fetch(
-    `https://api.jikan.moe/v4/anime?q=${title}&limit=9&page=${page}&type=${genre}`
+    `https://api.jikan.moe/v4/anime?q=${title}&limit=9&page=${page}&type=${genre}&order_by=title&sort=${sorting}`
   )
     .then((res) => res.json())
     .then((json) => json.data)
