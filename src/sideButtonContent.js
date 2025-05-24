@@ -3,7 +3,6 @@ import { load } from "./functionailty/save";
 import { remove } from "./remove";
 export function sideButtonsContent() {
   let info = load("sideButtons")[0];
-  console.log(info);
   let currentPage = load("currentPage");
   let container = document.getElementById("content");
   container.textContent = "";
@@ -17,6 +16,7 @@ export function sideButtonsContent() {
       console.log("none");
       break;
     }
+
     let card = document.createElement("div");
 
     let title = document.createElement("div");
@@ -43,12 +43,12 @@ export function sideButtonsContent() {
     let image = document.createElement("img");
     image.src = info[i].image;
     image.classList.add("photos");
-
+    const index = i;
     let addButton = document.createElement("button");
     addButton.textContent = "remove";
     addButton.classList.add("addButton");
     addButton.addEventListener("click", () => {
-      remove(i);
+      remove(index);
     });
 
     card.append(title, addButton, image, duration, episodes);

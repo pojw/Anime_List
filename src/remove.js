@@ -6,6 +6,7 @@ export function remove(index) {
   let favoirtes = sidebuttons[0];
   favoirtes.splice(index, 1);
   sidebuttons[0] = favoirtes;
+  console.log(favoirtes);
   save("sideButtons", sidebuttons);
   sideButtonsContent();
 }
