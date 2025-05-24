@@ -1,16 +1,23 @@
-//
+import { load } from "./functionailty/save";
 import { search } from "./search";
+import { save } from "./functionailty/save";
 export function topBarFunctions() {
   //section for search bar
   let searchBar = document.getElementById("searchBar");
-
   let submitButton = document.getElementById("submit");
   submitButton.addEventListener("click", () => {
-    search(searchBar.value);
+    let title = searchBar.value;
+    save("title", title);
+    save("currentPage", 1);
+
+    search();
   });
   searchBar.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
-      search(searchBar.value);
+      let title = searchBar.value;
+      save("currentPage", 1);
+      save("title", title);
+      search();
     }
   });
   //Add function to series buttons
@@ -77,6 +84,30 @@ export function topBarFunctions() {
     asc.classList.add("notPressed");
 
     localStorage.setItem("sorting", JSON.stringify("desc"));
+  });
+  let next = document.getElementById("next");
+  next.addEventListener("click", () => {
+    let content = document.getElementById("content");
+    if (content.children.length == 9) {
+      let currentPage = load("currentPage");
+      currentPage += 1;
+      save("currentPage", currentPage);
+      search();
+    } else {
+      alert("no more");
+    }
+  });
+
+  let back = document.getElementById("back");
+  back.addEventListener("click", () => {
+    let currentPage = load("currentPage");
+    if (currentPage <= 1) {
+      alert("this page 1");
+    } else {
+      currentPage -= 1;
+      save("currentPage", currentPage);
+      search();
+    }
   });
   //section for final thing idk yet
 }

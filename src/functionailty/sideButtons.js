@@ -14,5 +14,9 @@ export function sideButtons() {
     localStorage.setItem("genre", JSON.stringify("tv"));
     localStorage.setItem("sideButtons", JSON.stringify(sideButtons));
     localStorage.setItem("sorting", JSON.stringify("asc"));
+    localStorage.setItem("random", false);
+    localStorage.setItem("newAnimes", false);
+    localStorage.setItem("topAnimes", false);
+    localStorage.setItem("title", JSON.stringify("One piece "));
   }
 }

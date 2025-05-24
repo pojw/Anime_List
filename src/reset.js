@@ -6,6 +6,6 @@ export function reset() {
   reset.addEventListener("click", () => {
     localStorage.clear();
     sideButtons();
-    console.log("nice");
+    location.reload();
   });
 }

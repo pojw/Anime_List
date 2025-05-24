@@ -1,6 +1,6 @@
 import { save } from "./save";
 import { load } from "./save";
-
+import { search } from "../search";
 import { sideButtonsContent } from "../sideButtonContent";
 
 export function sideButtonsLoader() {
@@ -18,7 +18,9 @@ export function sideButtonsLoader() {
   topAnimes.textContent = sideButtons[1][0];
 
   topAnimes.addEventListener("click", function () {
-    sideButtonsContent();
+    save("topAnimes", true);
+    search();
+    save("topAnimes", false);
   });
 
   //New animes
@@ -26,7 +28,9 @@ export function sideButtonsLoader() {
   newAnimes.textContent = sideButtons[2][0];
 
   newAnimes.addEventListener("click", function () {
-    sideButtonsContent();
+    save("newAnimes", true);
+    search();
+    save("newAnimes", false);
   });
 
   //random
@@ -35,7 +39,9 @@ export function sideButtonsLoader() {
   random.textContent = sideButtons[3][0];
 
   random.addEventListener("click", function () {
-    sideButtonsContent();
+    save("random", true);
+    search();
+    save("random", false);
   });
 
   //math Topidw

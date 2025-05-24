@@ -12,12 +12,8 @@ sideButtonsLoader();
 save();
 topBarFunctions();
 
-search("one peiece");
+search();
 //vvairables/ options
-
-let order = "score"; //  order by socre or poultauirioy
-let sort = "desc"; //dess or asc
-let type = "anime"; // movie msuic
 
 //releavant information for each thign
 //images
