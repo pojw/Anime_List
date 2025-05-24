@@ -3,6 +3,7 @@ import { load } from "./save";
 import { search } from "../search";
 import { sideButtonsContent } from "../sideButtonContent";
 import { sideButtonsStorage } from "../sideButtonStorage";
+
 export function sideButtonsLoader() {
   let sideButtons = load("sideButtons");
   let sideBar = document.getElementById("sideBar");
@@ -55,5 +56,12 @@ export function sideButtonsLoader() {
     sideButtonsStorage("math");
     search();
   });
-  sideBar.append(favoirtes, topAnimes, newAnimes, random, math);
+  let reset = document.createElement("button");
+  reset.textContent = sideButtons[5][0];
+  reset.classList.add("sideButton");
+  reset.addEventListener("click", () => {
+    localStorage.clear();
+    location.reload();
+  });
+  sideBar.append(favoirtes, topAnimes, newAnimes, random, math, reset);
 }

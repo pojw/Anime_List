@@ -10,8 +10,10 @@ body {
 }
 
 #sideBar {
-  display: grid;
-  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
   gap: 15px;
   border: 3px rgb(128, 9, 0) solid;
 }
@@ -28,12 +30,11 @@ body {
   border: 3px rgb(0, 128, 28) solid;
 }
 #topRow {
-  display: grid;
-  grid-template-columns: 35% repeat(4, 25%);
+  display: flex;
+  justify-content: space-around;
 }
 #searchSection {
   display: flex;
-  justify-content: center;
   align-self: center;
   gap: 10px;
   height: 30px;
@@ -77,6 +78,11 @@ body {
   border-radius: 15px;
   border: 0px;
   width: 40px;
+}
+#reset {
+  height: 30px;
+  width: 60px;
+  align-self: center;
 }
 #content {
   display: grid;

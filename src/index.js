@@ -6,7 +6,6 @@ import { sideButtonsLoader } from "./functionailty/sideButtonLoader";
 import { topBarFunctions } from "./topBarFunctions";
 import { search } from "./search";
 import { reset } from "./reset"; //
-reset();
 sideButtons();
 sideButtonsLoader();
 save();

@@ -9,6 +9,7 @@ export function sideButtons() {
       ["New Animes"],
       ["Random"],
       ["Math Topics"],
+      ["Reset"],
     ];
     localStorage.setItem("currentPage", JSON.stringify(1));
     localStorage.setItem("genre", JSON.stringify("tv"));
