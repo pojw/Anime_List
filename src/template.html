@@ -9,29 +9,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
-    <button id="reset">Reset</button>
-
     <div id="container">
       <div id="sideBar"></div>
       <div id="rightSdie">
         <div id="topRow">
-          <input id="searchBar" type="text" placeholder="search anime" />
-          <button id="submit">Submit</button>
+          <div id="searchSection">
+            <input id="searchBar" type="text" placeholder="search anime" />
+            <button id="submit">Submit</button>
+          </div>
           <div id="seriesOptions">
-            Series Option
-            <button id="anime">Anime</button>
-            <button id="movie">Movies</button>
-            <button id="both">Both</button>
+            Series Option:
+            <button class="buttonOptions" id="anime">Anime</button>
+            <button class="buttonOptions" id="movie">Movies</button>
+            <button class="buttonOptions" id="both">Both</button>
           </div>
           <div id="sortOptions">
-            Sorting Option
-            <button id="asc">Asc</button>
-            <button id="desc">Desc</button>
+            Sorting Option:
+            <button class="sortButton" id="asc">Asc</button>
+            <button class="sortButton" id="desc">Desc</button>
           </div>
           <div id="mobility">
-            <button id="back"><</button>
-            <button id="next">></button>
+            Page:
+            <button class="mobButton" id="back"><</button>
+            <button class="mobButton" id="next">></button>
           </div>
+          <button id="reset">Reset</button>
         </div>
         <div id="content">
           <div>hello</div>
