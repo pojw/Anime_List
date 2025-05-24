@@ -2,7 +2,7 @@ import { save } from "./save";
 import { load } from "./save";
 import { search } from "../search";
 import { sideButtonsContent } from "../sideButtonContent";
-
+import { sideButtonsStorage } from "../sideButtonStorage";
 export function sideButtonsLoader() {
   let sideButtons = load("sideButtons");
   let sideBar = document.getElementById("sideBar");
@@ -11,6 +11,7 @@ export function sideButtonsLoader() {
   let favoirtes = document.createElement("button");
   favoirtes.textContent = sideButtons[0][0];
   favoirtes.addEventListener("click", function () {
+    sideButtonsStorage("favorites");
     sideButtonsContent();
   });
   //top animes
@@ -18,9 +19,8 @@ export function sideButtonsLoader() {
   topAnimes.textContent = sideButtons[1][0];
 
   topAnimes.addEventListener("click", function () {
-    save("topAnimes", true);
+    sideButtonsStorage("topAnimes");
     search();
-    save("topAnimes", false);
   });
 
   //New animes
@@ -28,9 +28,8 @@ export function sideButtonsLoader() {
   newAnimes.textContent = sideButtons[2][0];
 
   newAnimes.addEventListener("click", function () {
-    save("newAnimes", true);
+    sideButtonsStorage("newAnimes");
     search();
-    save("newAnimes", false);
   });
 
   //random
@@ -39,9 +38,8 @@ export function sideButtonsLoader() {
   random.textContent = sideButtons[3][0];
 
   random.addEventListener("click", function () {
-    save("random", true);
+    sideButtonsStorage("random");
     search();
-    save("random", false);
   });
 
   //math Topidw
@@ -49,7 +47,8 @@ export function sideButtonsLoader() {
   math.textContent = sideButtons[4][0];
 
   math.addEventListener("click", function () {
-    sideButtonsContent();
+    sideButtonsStorage("math");
+    search();
   });
   sideBar.append(favoirtes, topAnimes, newAnimes, random, math);
 }

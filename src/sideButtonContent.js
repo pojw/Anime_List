@@ -7,7 +7,8 @@ export function sideButtonsContent() {
   let currentPage = load("currentPage");
   let container = document.getElementById("content");
   container.textContent = "";
-  for (let i = 1; i < 1 + currentPage * 9; i++) {
+  let i = 9 * currentPage - 8;
+  for (; i <= currentPage * 9; i++) {
     //load information
     if (!info[i]) {
       continue;

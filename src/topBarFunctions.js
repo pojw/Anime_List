@@ -1,6 +1,8 @@
 import { load } from "./functionailty/save";
 import { search } from "./search";
 import { save } from "./functionailty/save";
+import { sideButtonsStorage } from "./sideButtonStorage";
+import { sideButtonsContent } from "./sideButtonContent";
 export function topBarFunctions() {
   //section for search bar
   let searchBar = document.getElementById("searchBar");
@@ -9,7 +11,7 @@ export function topBarFunctions() {
     let title = searchBar.value;
     save("title", title);
     save("currentPage", 1);
-
+    sideButtonsStorage("search");
     search();
   });
   searchBar.addEventListener("keydown", function (event) {
@@ -17,6 +19,8 @@ export function topBarFunctions() {
       let title = searchBar.value;
       save("currentPage", 1);
       save("title", title);
+      sideButtonsStorage("search");
+
       search();
     }
   });
@@ -92,7 +96,12 @@ export function topBarFunctions() {
       let currentPage = load("currentPage");
       currentPage += 1;
       save("currentPage", currentPage);
-      search();
+      let favoirtes = load("favorites");
+      if (favoirtes == true) {
+        sideButtonsContent();
+      } else {
+        search();
+      }
     } else {
       alert("no more");
     }
@@ -106,7 +115,12 @@ export function topBarFunctions() {
     } else {
       currentPage -= 1;
       save("currentPage", currentPage);
-      search();
+      let favoirtes = load("favorites");
+      if (favoirtes == true) {
+        sideButtonsContent();
+      } else {
+        search();
+      }
     }
   });
   //section for final thing idk yet

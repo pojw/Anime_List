@@ -11,7 +11,7 @@ export function search() {
   let newAnimes = load("newAnimes");
 
   if (topAnimes == true) {
-    url = `https:api.jikan.moe/v4/anime?order_by=score&sort=desc&limit=9&page=1&type=tv
+    url = `https:api.jikan.moe/v4/anime?order_by=score&sort=desc&page=${page}&limit=9&type=tv
 `;
   }
   if (random == true) {
@@ -19,7 +19,7 @@ export function search() {
 `;
   }
   if (newAnimes == true) {
-    url = `https://api.jikan.moe/v4/anime?order_by=start_date&limit=9&sort=desc
+    url = `https://api.jikan.moe/v4/anime?order_by=start_date&&page=${page}&limit=9&sort=desc
 `;
   }
   fetch(url)

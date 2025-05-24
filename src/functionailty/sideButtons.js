@@ -18,5 +18,6 @@ export function sideButtons() {
     localStorage.setItem("newAnimes", false);
     localStorage.setItem("topAnimes", false);
     localStorage.setItem("title", JSON.stringify("One piece "));
+    localStorage.setItem("favorites", false);
   }
 }
