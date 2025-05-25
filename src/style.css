@@ -87,7 +87,6 @@ body {
   grid-template-columns: repeat(3, 30vw);
   grid-template-rows: repeat(3, 315px);
   height: 95vh;
-  border: 1 solid pink;
   gap: 5px;
 }
 .description {
