@@ -11,7 +11,7 @@ export function search() {
   let newAnimes = load("newAnimes");
 
   if (topAnimes == true) {
-    url = `https:api.jikan.moe/v4/anime?order_by=score&sort=desc&page=${page}&limit=9&type=tv
+    url = `https://api.jikan.moe/v4/anime?order_by=score&sort=desc&page=${page}&limit=9&type=tv
 `;
   }
   if (random == true) {
