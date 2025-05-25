@@ -27,7 +27,7 @@ export function search() {
     .then((json) => json.data)
     .then((data) => {
       let object = {};
-
+      console.log(data);
       if (random == false) {
         const keys = [
           "first",
