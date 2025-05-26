@@ -16,8 +16,8 @@ body {
   border: 3px rgb(128, 9, 0) solid;
 }
 .sideButton {
-  width: 100px;
-  height: 50px;
+  width: 100%;
+  height: 30%;
   border-radius: 15px;
   border: 0px;
 }

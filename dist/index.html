@@ -10,11 +10,33 @@
   <script defer src="main.js"></script></head>
   <body>
     <div id="container">
-      <div id="sideBar">
-        <button class="sideButton">submit</button>
-      </div>
-      <div id="content">
-        <div>hello</div>
+      <div id="sideBar"></div>
+      <div id="rightSdie">
+        <div id="topRow">
+          <div id="searchSection">
+            <input id="searchBar" type="text" placeholder="search anime" />
+            <button id="submit">Submit</button>
+          </div>
+          <div id="seriesOptions">
+            Series Option:
+            <button class="buttonOptions" id="anime">Anime</button>
+            <button class="buttonOptions" id="movie">Movies</button>
+            <button class="buttonOptions" id="both">Both</button>
+          </div>
+          <div id="sortOptions">
+            Sorting Option:
+            <button class="sortButton" id="asc">Asc</button>
+            <button class="sortButton" id="desc">Desc</button>
+          </div>
+          <div id="mobility">
+            Page:
+            <button class="mobButton" id="back"><</button>
+            <button class="mobButton" id="next">></button>
+          </div>
+        </div>
+        <div id="content">
+          <div>hello</div>
+        </div>
       </div>
     </div>
   </body>
