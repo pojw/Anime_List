@@ -143,9 +143,55 @@ body {
 }
 
 .pressed {
-  background-color: yellow;
+  background-color: rgb(167, 209, 215);
 }
 
 .notPressed {
-  background-color: blue;
+  background-color: rgb(201, 201, 210);
+}
+
+.modalOverlay {
+  display: none;
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  background-color: rgb(84, 195, 233);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 20px;
+}
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: none;
+}
+#modelContent {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+  font-weight: 700;
+}
+.questions {
+  display: grid;
+}
+#math1 {
+  align-self: center;
+  width: 40%;
+  border-radius: 7px;
+  border: 0;
+  font-weight: 700;
+}
+#value {
+  border-radius: 5px;
+  border: 0;
 }

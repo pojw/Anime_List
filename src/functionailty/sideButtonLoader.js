@@ -3,7 +3,8 @@ import { load } from "./save";
 import { search } from "../search";
 import { sideButtonsContent } from "../sideButtonContent";
 import { sideButtonsStorage } from "../sideButtonStorage";
-
+import { mathPopUp } from "../mathPopUp";
+import { mathLoader } from "../mathLoader";
 export function sideButtonsLoader() {
   let sideButtons = load("sideButtons");
   let sideBar = document.getElementById("sideBar");
@@ -13,8 +14,10 @@ export function sideButtonsLoader() {
   favoirtes.textContent = sideButtons[0][0];
   favoirtes.classList.add("sideButton");
   favoirtes.addEventListener("click", function () {
-    sideButtonsStorage("favorites");
-    sideButtonsContent();
+    mathPopUp(() => {
+      sideButtonsStorage("favorites");
+      sideButtonsContent();
+    });
   });
   //top animes
   let topAnimes = document.createElement("button");
@@ -22,8 +25,10 @@ export function sideButtonsLoader() {
   topAnimes.classList.add("sideButton");
 
   topAnimes.addEventListener("click", function () {
-    sideButtonsStorage("topAnimes");
-    search();
+    mathPopUp(() => {
+      sideButtonsStorage("topAnimes");
+      search();
+    });
   });
 
   //New animes
@@ -32,8 +37,10 @@ export function sideButtonsLoader() {
   newAnimes.classList.add("sideButton");
 
   newAnimes.addEventListener("click", function () {
-    sideButtonsStorage("newAnimes");
-    search();
+    mathPopUp(() => {
+      sideButtonsStorage("newAnimes");
+      search();
+    });
   });
 
   //random
@@ -43,8 +50,10 @@ export function sideButtonsLoader() {
   random.classList.add("sideButton");
 
   random.addEventListener("click", function () {
-    sideButtonsStorage("random");
-    search();
+    mathPopUp(() => {
+      sideButtonsStorage("random");
+      search();
+    });
   });
 
   //math Topidw
@@ -54,7 +63,7 @@ export function sideButtonsLoader() {
 
   math.addEventListener("click", function () {
     sideButtonsStorage("math");
-    search();
+    mathLoader();
   });
   let reset = document.createElement("button");
   reset.textContent = sideButtons[5][0];

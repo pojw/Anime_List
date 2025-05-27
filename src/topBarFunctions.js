@@ -3,6 +3,7 @@ import { search } from "./search";
 import { save } from "./functionailty/save";
 import { sideButtonsStorage } from "./sideButtonStorage";
 import { sideButtonsContent } from "./sideButtonContent";
+import { mathPopUp } from "./mathPopUp";
 export function topBarFunctions() {
   //section for search bar
   let searchBar = document.getElementById("searchBar");
@@ -12,22 +13,30 @@ export function topBarFunctions() {
     save("title", title);
     save("currentPage", 1);
     sideButtonsStorage("search");
-    search();
+    mathPopUp(() => {
+      search();
+    });
   });
   searchBar.addEventListener("keydown", function (event) {
     if (event.key === "Enter") {
       let title = searchBar.value;
       save("currentPage", 1);
       save("title", title);
-      sideButtonsStorage("search");
 
-      search();
+      sideButtonsStorage("search");
+      mathPopUp(() => {
+        search();
+      });
     }
   });
   //Add function to series buttons
   let anime = document.getElementById("anime");
   let movie = document.getElementById("movie");
   let both = document.getElementById("both");
+  both.classList.add("pressed");
+  movie.classList.add("notPressed");
+  anime.classList.add("notPressed");
+
   //anime button
   anime.addEventListener("click", () => {
     anime.classList.add("pressed");
@@ -68,7 +77,8 @@ export function topBarFunctions() {
   // getting sorting options
   let asc = document.getElementById("asc");
   let desc = document.getElementById("desc");
-
+  asc.classList.add("pressed");
+  desc.classList.add("notPressed");
   //asc button
   asc.addEventListener("click", () => {
     asc.classList.remove("notPressed");
@@ -123,5 +133,4 @@ export function topBarFunctions() {
       }
     }
   });
-  //section for final thing idk yet
 }
