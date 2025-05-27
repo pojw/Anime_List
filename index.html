@@ -20,8 +20,12 @@
           <div id="seriesOptions">
             Series Option:
             <button class="buttonOptions" id="anime">Anime</button>
-            <button class="buttonOptions" id="movie">Movies</button>
-            <button class="buttonOptions" id="both">Both</button>
+            <button class="buttonOptions" class="notPressed" id="movie">
+              Movies
+            </button>
+            <button class="buttonOptions" class="pressed" id="both">
+              Both
+            </button>
           </div>
           <div id="sortOptions">
             Sorting Option:
@@ -36,6 +40,16 @@
         </div>
         <div id="content">
           <div>hello</div>
+        </div>
+      </div>
+    </div>
+    <div id="background">
+      <div id="modal" class="modalOverlay">
+        <div id="modelContent">
+          Can you answer this question to move on?
+          <div id="questions"></div>
+          <input id="value" placeholder="you got this" />
+          <button id="math1">Submit</button>
         </div>
       </div>
     </div>
